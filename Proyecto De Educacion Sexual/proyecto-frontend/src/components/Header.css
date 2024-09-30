@@ -1,0 +1,162 @@
+/* Contenedor principal del Header */
+.header {
+    background: linear-gradient(135deg, #3498db, #6dd5fa); /* Degradado suave en tonos azules */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header:hover {
+    background: linear-gradient(135deg, #2980b9, #1e90ff); /* Cambia el color del fondo al pasar el cursor */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+}
+
+/* Logo */
+.logo h1 {
+    margin: 0;
+    font-size: 28px; /* Aumentar tamaño del logo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra de texto para el logo */
+    animation: logoPulse 2s infinite; /* Añadir animación de pulso */
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        text-shadow: 1px 1px 15px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Navegación */
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color:#1eb8ff;
+}
+
+.nav ul li {
+    margin: 0 20px; /* Aumentar margen entre enlaces */
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+    transform: scaleX(1.1); /* Escalar el subrayado al pasar el cursor */
+}
+
+.nav ul li a:hover {
+    color: #ecf0f1;
+    transform: scale(1.1); /* Escalar el texto al pasar el cursor */
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5); /* Añadir sombra al texto */
+}
+
+/* Icono de menú móvil */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-icon:hover {
+    transform: scale(1.2) rotate(10deg); /* Efecto de escala y rotación al pasar el cursor */
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: 30px; /* Aumentar tamaño del icono de menú */
+    height: 3px;
+    background-color: white;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.hamburger.open {
+    background-color: transparent;
+}
+
+.hamburger.open::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navegación para móviles */
+@media (max-width: 768px) {
+    .nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #3498db, #6dd5fa);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .nav.active {
+        max-height: 300px; /* Ajusta según la cantidad de enlaces */
+        opacity: 1; /* Hacer visible el menú */
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav ul li {
+        margin: 15px 0;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+}

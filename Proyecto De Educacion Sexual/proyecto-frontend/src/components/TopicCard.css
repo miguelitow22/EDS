@@ -1,0 +1,68 @@
+.topic-card {
+  background: rgba(255, 255, 255, 0.95); /* Fondo ligeramente más opaco */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border: 2px solid #5b86e5;
+  max-width: 320px; /* Ajuste del ancho máximo de la tarjeta */
+  margin: 100px auto;
+  cursor: pointer; /* Agregar cursor pointer */
+}
+
+.topic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.topic-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #5b86e5;
+  transition: transform 0.3s ease-in-out;
+}
+
+.topic-card:hover .topic-image {
+  transform: scale(1.1);
+}
+
+.topic-card-content {
+  padding: 20px;
+}
+
+.topic-card h3 {
+  margin: 10px 0;
+  font-size: 22px; /* Reducir el tamaño de fuente para evitar el corte de palabras */
+  color: #1e3c72; /* Azul oscuro para mejor contraste */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: normal; /* Permitir que las palabras se dividan en líneas múltiples */
+  word-wrap: break-word; /* Permitir la división de palabras largas */
+}
+
+.topic-card p {
+  font-size: 16px;
+  color: #000000 !important; /* Esto sobrescribirá otros estilos que afecten el color */
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #1e3c72; /* Botón azul oscuro */
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more:hover {
+  background-color: #1b3a70;
+  transform: scale(1.05); /* Agregar una ligera animación de escala */
+}

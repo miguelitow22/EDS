@@ -1,0 +1,105 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f7f9fc, #e0f7fa); /* Fondo degradado */
+  animation: slideUp 1.5s ease-in-out, gradientShift 20s ease-in-out infinite; /* Ajuste de animación más suave */
+}
+
+.profile-form {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.profile-form h1 {
+  font-size: 30px;
+  color: #00796b;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-form h1:hover {
+  color: #004d40;
+  transform: scale(1.1);
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.profile-form input:hover {
+  border-color: #00796b;
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0, 121, 107, 0.2);
+}
+
+.profile-form input:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 15px rgba(0, 121, 107, 0.5);
+  transform: scale(1.03);
+}
+
+.profile-form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #00796b;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-form button:hover {
+  background-color: #004d40;
+  box-shadow: 0 0 15px rgba(0, 77, 64, 0.5);
+  transform: scale(1.05);
+}
+
+.profile-form button:active {
+  transform: scale(0.95);
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #00796b;
+  text-align: center;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(to right, #f7f9fc, #e0f7fa);
+  }
+  50% {
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+  }
+  100% {
+    background: linear-gradient(to right, #f7f9fc, #e0f7fa);
+  }
+}
